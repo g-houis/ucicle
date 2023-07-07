@@ -9,8 +9,7 @@
     "build": "tsc -p tsconfig.json",
     "fix:lint": "eslint src --ext .ts --fix",
     "watch:build": "tsc -p tsconfig.json -w",
-    "doc:html": "typedoc --options typedoc.json",
-    "doc:json": "typedoc src/ --exclude **/*.spec.ts --target ES6 --mode file --json build/docs/typedoc.json"
+    "doc": "typedoc --options typedoc.json"
   },
   "engines": {
     "node": ">=10"
