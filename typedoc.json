@@ -1,0 +1,8 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "./src/*.ts",
+    "./src/*/**.ts"
+  ],
+  "out": "build/doc"
+}
