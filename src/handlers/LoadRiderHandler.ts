@@ -20,7 +20,7 @@ async function handleLoadRiders(event: unknown, context: unknown, callback: unkn
     const startDate: Date = new Date();
 
     if (!process.env.RIDERS_FILE_NAME) throw new Error('RIDERS_FILE_NAME environment variable not defined');
-    if (!process.env.RIDERS_BUCKET_NAME) throw new Error('RIDERS_FILE_NAME environment variable not defined');
+    if (!process.env.RIDERS_BUCKET_NAME) throw new Error('RIDERS_BUCKET_NAME environment variable not defined');
 
     try {
         const riders: Rider[] = [];
