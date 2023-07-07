@@ -14,7 +14,7 @@ export async function getRankings(index: number): Promise<Rank[]> {
     let response: AxiosResponse<unknown> | null = await axios.get(`https://www.procyclingstats.com/rankings.php?page=smallerorequal&offset=${index}00&filter=Filter`);
 
     if (typeof response?.data != 'string') {
-        throw new Error("Unable to parse data from 'https://www.procyclingstats.com/rankings.php?page=smallerorequal&offset=${index}00&filter=Filter' - it's not a string");
+        throw new Error('Unable to parse data from \'https://www.procyclingstats.com/rankings.php?page=smallerorequal&offset=${index}00&filter=Filter\' - it\'s not a string');
     }
 
     let doc: Document | null = new JSDOM(response?.data).window.document;
@@ -24,7 +24,7 @@ export async function getRankings(index: number): Promise<Rank[]> {
     doc = null; // free memory asap
 
     if (!table || !table.rows) {
-        throw new Error("Unable to parse data from 'https://www.procyclingstats.com/rankings.php?page=smallerorequal&offset=${index}00&filter=Filter' - ranking table not found");
+        throw new Error('Unable to parse data from \'https://www.procyclingstats.com/rankings.php?page=smallerorequal&offset=${index}00&filter=Filter\' - ranking table not found');
     }
     if (table.rows.length === 0) {
         return [];

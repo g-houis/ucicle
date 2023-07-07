@@ -26,8 +26,8 @@ export async function uploadObject(object: unknown, filename: string, bucket: st
         Bucket: bucket,
         Key: filename,
         Body: JSON.stringify(object),
-        StorageClass: storageClass || "STANDARD",
-        ACL: acl || "private"
+        StorageClass: storageClass || 'STANDARD',
+        ACL: acl || 'private'
     });
 
     await client.send(command);

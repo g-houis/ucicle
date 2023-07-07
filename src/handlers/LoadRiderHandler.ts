@@ -40,8 +40,8 @@ async function handleLoadRiders(event: unknown, context: unknown, callback: unkn
             riders,
             process.env.RIDERS_FILE_NAME,
             process.env.RIDERS_BUCKET_NAME,
-            "ONEZONE_IA",
-            "public-read"
+            'ONEZONE_IA',
+            'public-read'
         );
 
         const endDate: Date = new Date();
