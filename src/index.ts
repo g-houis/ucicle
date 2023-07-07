@@ -1,3 +1,5 @@
-import { testFunction } from "./testModule/testFunction.js";
+import { handleLoadRiders } from './handlers/LoadRiderHandler.js';
 
-console.log(testFunction("message from index"));
+export {
+    handleLoadRiders
+};
