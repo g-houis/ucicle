@@ -17,5 +17,22 @@ export type Rider = {
     country: string,
     age: number,
     weight: number,
-    height: number
+    height: number,
+    bestResult: BestResult
 }
+
+
+/**
+ * @param race Race's title
+ * @param position Ranking of the rider for teh race
+ * @param raceType Define the type of the race
+ * @param recurrence Defines the number of times the rider has obtained this result
+ */
+export type BestResult = {
+    race: string,
+    rank: number,
+    raceType: RaceType,
+    recurrence: number
+}
+
+export type RaceType = 'GC' | 'Point GC' | 'KOM' | 'stage' | 'race';

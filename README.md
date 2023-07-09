@@ -8,7 +8,7 @@ Ucicle is a daily game based on [wordle](https://www.nytimes.com/games/wordle/in
 
 The aim of this lambda is to retrieve the list of the top 1000 uci riders once a month. This list will be saved in an s3 service.
 
-configuration
+Configuration
 
 | parameter  | value     |
 |------------|-----------|
@@ -26,6 +26,31 @@ Environment variables
 | S3_REGION          | s3 region                              |
 | RIDERS_FILE_NAME   | file used to store uci riders          |
 | RIDERS_BUCKET_NAME | bucket used to store uci riders        |
+
+
+### handleGenerateGuessRider
+
+The purpose of this lambda is to randomly retrieve a rider from the riders list and register it in a s3 service.
+
+Configuration
+
+| parameter  | value     |
+|------------|-----------|
+| min memory | 500MB     |
+| cron       | 0 1 * * * |
+| endpoint   | -         |
+
+Environment variables
+
+| variable              | description                            |
+|-----------------------|----------------------------------------|
+| S3_ACCESS_KEY         | access key for accessing the s3 bucket |
+| S3_SECRET_KEY         | secret key for accessing the s3 bucket |
+| S3_DOMAIN             | domain of the s3 service endpoint      |
+| S3_REGION             | s3 region                              |
+| RIDERS_FILE_NAME      | file used to store uci riders          |
+| GUESS_RIDER_FILE_NAME | file used to store daily guess driver  |
+| RIDERS_BUCKET_NAME    | bucket used to store uci riders        |
 
 ## Contributing
 
