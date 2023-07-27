@@ -8,27 +8,54 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  deploy_front:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./front/
     strategy:
       matrix:
         node-version: [18.x]
-        
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Run cd script
+        cache: 'yarn'
+        cache-dependency-path: './front/yarn.lock'
+    - name: Run front cd script
       run: |
-        npm run cd
+        yarn cd
       env: 
         ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
         DOMAIN: ${{ vars.DOMAIN }}
         REGION: ${{ vars.REGION }}
         BUCKET_NAME: ${{ vars.BUCKET_NAME }}
-        FUNCTION_ID: ${{ vars.FUNCTION_ID }}
+
+  deploy_functions:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./functions/
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+        cache-dependency-path: './functions/yarn.lock'
+    - name: Run functions cd script
+      run: |
+        yarn cd
+      env:
+        ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        DOMAIN: ${{ vars.DOMAIN }}
+        REGION: ${{ vars.REGION }}
+        BUCKET_NAME: ${{ vars.BUCKET_NAME }}

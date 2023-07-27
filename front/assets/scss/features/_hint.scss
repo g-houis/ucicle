@@ -1,0 +1,28 @@
+@use "../variables" as *;
+
+.hint-card {
+    background-color: $background-color;
+    border-radius: $base-radius;
+    border: 1px solid $separator-color;
+    color: $text-color !important;
+    font-size: inherit;
+    padding: $large-spacing;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: $base-spacing;
+
+    .highlight {
+      font-weight: bold;
+      color: $primary-color;
+    }
+
+    .title {
+        font-size: $large-font-size;
+        font-weight: bold;
+    }
+
+    .hint {
+        font-size: $base-font-size;
+    }
+}

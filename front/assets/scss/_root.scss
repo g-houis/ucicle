@@ -1,0 +1,46 @@
+@use "variables" as *;
+
+html {
+  height: 100%;
+  font-family: $base-font-family;
+  box-sizing: border-box;
+  font-size: $base-font-size !important;
+
+  @media only screen and (max-width: 600px) {
+    font-size: $small-font-size !important;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $separator-color;
+  width: 100%;
+}
+
+/* Remove default margin */
+body,
+p {
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+button {
+  color: $text-color;
+}

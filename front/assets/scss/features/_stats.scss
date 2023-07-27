@@ -1,0 +1,37 @@
+@use "../variables" as *;
+
+.stats-modal {
+  .stats-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $large-spacing;
+
+    .stat-card {
+      display: flex;
+      flex-direction: column;
+      background-color: $paper-background-color;
+      padding: $base-spacing;
+      border-radius: $base-radius;
+
+      .count {
+        font-size: $large-spacing;
+        font-weight: bold;
+      }
+
+      .label {
+        font-size: $base-font-size;
+        font-weight: bold;
+        color: $info-text-color;
+      }
+    }
+  }
+
+  .history-card {
+    .success {
+      color: $success-color
+    }
+    .error {
+      color: $error-color
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@use "../variables" as *;
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+
+  thead {
+    tr {
+      background-color: transparent;
+    }
+  }
+
+  th {
+    padding: $base-spacing;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  tr {
+    text-align: left;
+    border-radius: $base-radius;
+    width: 100%;
+    border-spacing: $base-spacing 0;
+    background-color: $paper-background-color;
+
+    td {
+      padding: $base-spacing;
+      border-top: 1px solid $separator-color;
+      border-bottom: 1px solid $separator-color;
+
+      @media only screen and (max-width: 600px) {
+        padding: 7px;
+      }
+
+      &:first-child {
+        border-bottom-left-radius: $base-radius;
+        border-top-left-radius: $base-radius;
+        border-left: 1px solid $separator-color;
+      }
+
+      &:last-child {
+        border-bottom-right-radius: $base-radius;
+        border-top-right-radius: $base-radius;
+        border-right: 1px solid $separator-color;
+        text-align: right;
+      }
+    }
+  }
+}

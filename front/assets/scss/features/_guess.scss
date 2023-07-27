@@ -1,0 +1,50 @@
+@use "../variables" as *;
+
+.guess-card {
+  .equals {
+    color: $success-color;
+  }
+
+  .lower {
+    color: $error-color;
+  }
+
+  .higher {
+    color: $error-color;
+  }
+
+  .not-equals {
+    color: $error-color;
+  }
+
+  td {
+    div {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      span {
+        margin-right: $base-spacing;
+        @media only screen and (max-width: 600px) {
+          margin-right: 2px;
+        }
+
+        &.highlight {
+          font-weight: bold;
+        }
+      }
+    }
+
+    &:last-child {
+      div {
+        text-align: right;
+        width: 100%;
+
+        span {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

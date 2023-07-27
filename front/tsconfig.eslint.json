@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src",
+    "asset.d.ts",
+    "tests",
+    "vite.config.ts",
+    "di-transformer-adapter.ts"
+  ]
+}

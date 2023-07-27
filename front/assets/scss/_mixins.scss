@@ -1,0 +1,9 @@
+@use "./variables" as *;
+
+@mixin box-shadow-button() {
+  box-shadow: darken($background-color, 20%) 0 2px 3px;
+}
+
+@mixin clickable() {
+  cursor: pointer;
+}

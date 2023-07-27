@@ -1,0 +1,18 @@
+@use "../variables" as *;
+
+main {
+  padding: $largest-spacing $base-spacing;
+  display: flex;
+  flex-direction: column;
+  gap: $large-spacing;
+  max-width: 900px;
+  margin: 70px auto auto;
+
+  @media only screen and (max-width: 600px) {
+    margin-top: 70px;
+    padding: $large-spacing 0;
+    margin-right: $base-spacing;
+    margin-left: $base-spacing;
+    gap: $base-spacing;
+  }
+}

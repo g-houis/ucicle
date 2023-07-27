@@ -8,13 +8,23 @@ Ucicle project is divided in two parts :
 * A React front-end located at `front` folder
 * Node.js functions located at `functions` designed to generate game data
 
+### Front end
+
+The react front end is designed to be served by a web server. The website needs two files :
+* Riders referential accessible at `api/riders.json`
+* A secret rider to guess accessible at `api/secret_rider.json`
+
+## Front
+
+You can check the front-end documentation [here](./front/README.md)
+
 ## Functions
 
-You can check functions documentation [here](../../../Downloads/ucicle/ucicle/functions/README.md)
+You can check functions documentation [here](./functions/README.md)
 
 ## Deployment
 
-Running `yarn cd` launches the command for `functions` directory. More information about deployment [here (functions)](../../../Downloads/ucicle/ucicle/functions/README.md).
+Running `yarn cd` launches the command for `front` and `functions` directories. More information about deployment [here (front)](./front/README.md) adn [here (functions)](./functions/README.md).
 
 ## Contributing
 
@@ -25,4 +35,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[MIT](../../../Downloads/ucicle/ucicle/LICENSE)
+[MIT](LICENSE)

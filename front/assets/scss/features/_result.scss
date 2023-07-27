@@ -1,0 +1,32 @@
+@use "../variables" as *;
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $large-spacing;
+    border: 1px solid $separator-color;
+    padding: $large-spacing;
+    border-radius: $base-radius;
+
+    .result {
+        background-color: $background-color;
+        border-radius: $base-radius;
+        color: $text-color !important;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: $base-spacing;
+        font-size: $large-font-size;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+    .share {
+        display: flex;
+        gap: $base-spacing;
+        width: 50%;
+    }
+}

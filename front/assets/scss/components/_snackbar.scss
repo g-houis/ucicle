@@ -1,0 +1,29 @@
+@use "../variables" as *;
+
+.MuiPaper-root.MuiAlert-root {
+  background-color: $paper-background-color;
+  color: $text-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid $separator-color;
+
+  .MuiAlert-icon {
+    color: $text-color
+  }
+
+  .MuiAlert-action {
+    display: inline-block;
+    padding: $small-spacing;
+    margin-left: $base-spacing;
+  }
+
+  .MuiAlert-action {
+    display: inline-block;
+    padding: $small-spacing;
+
+    .MuiIconButton-root {
+      border: none;
+    }
+  }
+}
