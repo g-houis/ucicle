@@ -9,17 +9,17 @@ import { ObjectCannedACL, PutObjectCommand, S3Client, StorageClass } from '@aws-
  * @param acl Name of the bucket to which the file will be uploaded
  */
 export async function uploadObject(object: unknown, filename: string, bucket: string, storageClass?: StorageClass, acl?: ObjectCannedACL): Promise<void> {
-    if (!process.env.S3_ACCESS_KEY) throw Error('S3_ACCESS_KEY environment variable not defined');
-    if (!process.env.S3_SECRET_KEY) throw Error('S3_SECRET_KEY environment variable not defined');
-    if (!process.env.S3_DOMAIN) throw Error('S3_DOMAIN environment variable not defined');
+    if (!process.env.ACCESS_KEY) throw Error('ACCESS_KEY environment variable not defined');
+    if (!process.env.SECRET_KEY) throw Error('SECRET_KEY environment variable not defined');
+    if (!process.env.DOMAIN) throw Error('DOMAIN environment variable not defined');
 
     const client: S3Client = new S3Client({
-        endpoint: `https://${process.env.S3_DOMAIN}`,
+        endpoint: `https://${process.env.DOMAIN}`,
         credentials: {
-            accessKeyId: process.env.S3_ACCESS_KEY,
-            secretAccessKey: process.env.S3_SECRET_KEY
+            accessKeyId: process.env.ACCESS_KEY,
+            secretAccessKey: process.env.SECRET_KEY
         },
-        region: process.env.S3_REGION
+        region: process.env.REGION
     });
 
     const command: PutObjectCommand = new PutObjectCommand({

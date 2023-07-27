@@ -10,6 +10,7 @@ lerna-debug.log*
 # Build
 node_modules
 build
+functions.zip
 
 # Env
 .env
@@ -27,4 +28,5 @@ build
 
 # testModule
 test
+src/**.js
 package-lock.json

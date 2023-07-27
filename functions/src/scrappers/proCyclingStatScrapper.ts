@@ -33,17 +33,20 @@ export async function getRankings(index: number): Promise<Rank[]> {
     for (let j = 1; j < table.rows.length; j++) {
         const row: HTMLTableRowElement = table.rows[j];
         const cell: HTMLTableCellElement = row.cells[3];
+        const teamCell: HTMLTableCellElement = row.cells[4];
+        const team = teamCell.innerHTML.match(/<a[^>]*>([^>]*)<\/a>/)?.[1];
         const href: string | undefined = cell.innerHTML.match(/<a[^>]* href="([^"]*)"/)?.[1];
 
         // if unable to parse a rank, skip it
-        if (row.cells[0].textContent && href) results.push({
+        if (row.cells[0].textContent && href && team) results.push({
             rank: row.cells[0].textContent,
-            riderLink: href
+            riderLink: href,
+            team
         });
     }
 
     const errorRate = (table.rows.length - results.length) / table.rows.length;
-    if (errorRate > 0.1) {
+    if (errorRate > 0.2) {
         throw new Error(`Error rate while parsing ranks is too high (${errorRate})`);
     }
 
@@ -137,7 +140,9 @@ async function getRider(rank: Rank): Promise<Rider | null> {
             race: race,
             raceType: raceType,
             recurrence: parseInt(recurrence),
-            rank: parseInt(position)
-        }
+            rank: parseInt(position),
+            years: []
+        },
+        team: rank.team
     };
 }
