@@ -1,6 +1,7 @@
 export type Rank = {
     rank: string,
-    riderLink: string
+    riderLink: string,
+    team: string,
 }
 
 /**
@@ -18,7 +19,8 @@ export type Rider = {
     age: number,
     weight: number,
     height: number,
-    bestResult: BestResult
+    bestResult: BestResult,
+    team: string
 }
 
 
@@ -32,7 +34,8 @@ export type BestResult = {
     race: string,
     rank: number,
     raceType: RaceType,
-    recurrence: number
+    recurrence: number,
+    years: number[]
 }
 
 export type RaceType = 'GC' | 'Point GC' | 'KOM' | 'stage' | 'race';
