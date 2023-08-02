@@ -1,0 +1,47 @@
+@use "../variables" as *;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: $text-color;
+  background-color: $background-color;
+  width: 100%;
+  border-bottom: 1px solid $separator-color;
+
+  .content {
+    height: 70px;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: $small-spacing;
+    padding: 0 $base-spacing;
+
+    @media only screen and (max-width: 600px) {
+      padding: 0 $base-spacing;
+    }
+
+    .title {
+      flex: 1;
+
+      &:hover {
+        cursor: default;
+      }
+
+      h1 {
+        margin: 0 $base-spacing 0 0;
+        font-size: $larger-font-size;
+        display: inline-block;
+      }
+
+      h2 {
+        display: inline-block;
+        font-weight: bold;
+        font-size: $base-font-size;
+        color: $info-text-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use "../variables" as *;
+
+.MuiButtonBase-root {
+  &.MuiButton-root {
+    border-radius: $base-radius;
+    background-color: $primary-color;
+    font-weight: bold;
+    color: $contrast-text-color;
+
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+    }
+  }
+}

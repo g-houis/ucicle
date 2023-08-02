@@ -1,0 +1,96 @@
+@use "variables" as *;
+
+.MuiBackdrop-root.MuiModal-backdrop {
+  background-color: transparentize(black, .40);
+}
+
+.MuiButtonBase-root {
+  &.MuiIconButton-root {
+    color: $text-color;
+    border: 1px solid $separator-color;
+    height: 35px;
+    width: 35px;
+    border-radius: $base-radius;
+    font-size: $base-font-size;
+
+    &:hover {
+      background-color: transparentize($text-color, .8);
+    }
+  }
+}
+
+.MuiInputBase-input.MuiOutlinedInput-input {
+    color: $text-color;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root {
+    border-radius: $base-radius !important;
+}
+
+.MuiFormLabel-root.MuiInputLabel-root {
+  color: $text-color;
+
+  &.Mui-focused {
+    color: $text-color;
+  }
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border: 1px solid $separator-color !important;
+}
+
+.MuiAutocomplete-root {
+  background-color: $global-background-color;
+  color: $text-color;
+  border-radius: $base-radius;
+}
+
+.MuiAutocomplete-paper {
+  margin-top: $base-spacing;
+  border-radius: $base-radius !important;
+  background-color: $background-color !important;
+  box-shadow: $box-shadow !important;
+  border: 1px solid $separator-color;
+  padding: $base-spacing;
+
+  .MuiAutocomplete-listbox {
+    .MuiAutocomplete-option {
+      background-color: $background-color;
+      color: $text-color;
+      border-radius: 4px;
+      padding: 5px;
+      min-height: unset;
+
+      &:hover {
+        background-color: $background-color !important;
+      }
+
+      &[aria-selected="true"] {
+        background-color: $background-color !important;
+      }
+
+      &.Mui-focused {
+        background-color: $active-background-color !important;
+      }
+    }
+  }
+}
+
+.MuiPaper-root.MuiPopover-paper.MuiMenu-paper {
+  border-radius: $base-radius !important;
+  background-color: $background-color !important;
+  box-shadow: $box-shadow !important;
+  border: 1px solid $separator-color;
+  color: $text-color;
+
+  .MuiButtonBase-root.MuiMenuItem-root {
+    padding: $base-spacing $large-spacing;
+    &:hover {
+      background-color: $active-background-color !important;
+    }
+
+    &.Mui-focused {
+      background-color: $active-background-color !important;
+    }
+  }
+}

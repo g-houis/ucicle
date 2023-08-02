@@ -1,0 +1,41 @@
+// fonts
+$base-font-family: 'Roboto', sans-serif;
+$small-font-size: 0.8rem;
+$base-font-size: 1rem;
+$large-font-size: 1.5rem;
+$larger-font-size: 2rem;
+
+// colors
+$primary-color: rgb(210, 185, 44);
+$info-color: #1392b6;
+$success-color: rgb(37, 147, 57);
+$error-color: rgb(196, 48, 48);
+
+$global-background-color: rgb(14, 14, 8);
+$background-color: rgb(23, 21, 13);
+$paper-background-color: rgb(30, 27, 19);
+$active-background-color: rgb(34, 31, 22);
+$separator-color: rgb(47, 45, 34);
+
+$text-color: #d2cfbb;
+$contrast-text-color: #44403d;
+$info-text-color: rgb(144, 141, 125);
+
+// spacings
+$small-spacing: 5px;
+$base-spacing: 10px;
+$large-spacing: 20px;
+$larger-spacing: 40px;
+$largest-spacing: 80px;
+
+// radius
+$base-radius: 8px;
+
+// shadow
+$shadow-color: #101011;
+$box-shadow: 5px 5px $base-spacing $global-background-color;
+
+// screen sizes
+$width-small-screen-px: 800;
+$width-medium-screen-px: 1150;
+$app-max-width: 1200px;

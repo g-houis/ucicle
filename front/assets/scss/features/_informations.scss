@@ -1,0 +1,13 @@
+@use "../variables" as *;
+
+.info-modal {
+  .modal-section-description {
+    &>div {
+      margin-bottom: $base-spacing;
+    }
+
+    ul {
+      padding-left: $large-spacing;
+    }
+  }
+}

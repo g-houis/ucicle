@@ -10,20 +10,39 @@ on:
     branches: [ "**" ]
 
 jobs:
-  build:
-
+  build_functions:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./functions/
     strategy:
       matrix:
         node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm run ci
+          cache: 'yarn'
+          cache-dependency-path: './functions/yarn.lock'
+      - run: yarn ci
+        
+  build_front:
+    runs-on: ubuntu-latest
+    defaults:
+       run:
+         working-directory: ./front/
+    strategy:
+      matrix:
+        node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+          cache-dependency-path: './front/yarn.lock'
+      - run: yarn ci
