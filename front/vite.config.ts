@@ -11,7 +11,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': 'https://ucicle-public.s3-website.fr-par.scw.cloud/',
+      '/api': 'http://ucicle.com.s3-website.fr-par.scw.cloud/',
     },
   },
 });

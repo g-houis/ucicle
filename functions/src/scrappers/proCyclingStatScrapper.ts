@@ -94,9 +94,9 @@ async function getRider(rank: Rank): Promise<Rider | null> {
 
 
     let topResultLine: HTMLLIElement | undefined | null = pageContent?.getElementsByClassName('right').item(0)?.querySelector('li');
-    const years = topResultLine?.innerHTML.match(/\(('\d+,?\s?)+\)/)?.[0]
-        .replace('\'', '')
-        .replace(' ', '')
+    const yearsString = topResultLine?.innerHTML.match(/\(('\d+,?\s?)+\)/)?.[0];
+    const years = yearsString?.
+        replaceAll('\'','').replaceAll('(', '').replaceAll(')','').replaceAll(' ','')
         .split(',')
         .map((year) => 2000 + parseInt(year));
     let infoElement: Element | null | undefined = pageContent?.getElementsByClassName('rdr-info-cont').item(0);
