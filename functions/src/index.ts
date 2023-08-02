@@ -13,13 +13,15 @@ import { handleLoadRiders } from './handlers/LoadRiderHandler.js';
 export function handler(event: { body?: { action: string } }, context: unknown, callback: unknown) {
     switch (event.body?.action) {
         case 'LOAD_RIDERS': {
+            console.info(`Triggered ${event.body?.action}, starting function handleLoadRiders`);
             return handleLoadRiders();
         }
         case 'GENERATE_SECRET_RIDER': {
+            console.info(`Triggered ${event.body?.action}, starting function handleGenerateSecretRider`);
             return handleGenerateSecretRider();
         }
         default: {
-            console.log('No action matched');
+            console.info('No action matched');
             break;
         }
     }
