@@ -21,7 +21,7 @@ export function handler(event: { body?: { action: string } }, context: unknown, 
             return handleGenerateSecretRider();
         }
         default: {
-            console.info('No action matched');
+            console.warn(`No action matched ${event.body?.action}`);
             break;
         }
     }
