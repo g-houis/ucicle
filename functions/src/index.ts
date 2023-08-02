@@ -10,8 +10,8 @@ import { handleLoadRiders } from './handlers/LoadRiderHandler.js';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function handler(event: { action?: string }, context: unknown, callback: unknown) {
-    switch (event.action) {
+export function handler(event: { body?: { action: string } }, context: unknown, callback: unknown) {
+    switch (event.body?.action) {
         case 'LOAD_RIDERS': {
             return handleLoadRiders();
         }
@@ -19,7 +19,8 @@ export function handler(event: { action?: string }, context: unknown, callback: 
             return handleGenerateSecretRider();
         }
         default: {
-            return handleLoadRiders();
+            console.log('No action matched');
+            break;
         }
     }
 }
