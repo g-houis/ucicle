@@ -24,7 +24,7 @@ async function handleGenerateSecretRider(): Promise<HandlerResponse> {
             convertToMin2Digit(dateDayjs.month())
               .concat(convertToMin2Digit(dateDayjs.date())),
           );
-        const ridersResponse: AxiosResponse<Rider[]> = await axios.get(`https://${process.env.BUCKET_NAME}.${process.env.DOMAIN}/api/riders.json`);
+        const ridersResponse: AxiosResponse<Rider[]> = await axios.get(`http://${process.env.BUCKET_NAME}.${process.env.DOMAIN}/api/riders.json`);
 
         const top200: Rider[] = ridersResponse.data.filter((rider: Rider) => rider.rank <= 100);
         const randomIndex: number = Math.floor(Math.random() * (top200.length + 1));
