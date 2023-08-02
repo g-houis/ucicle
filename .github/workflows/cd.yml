@@ -59,3 +59,4 @@ jobs:
         DOMAIN: ${{ vars.DOMAIN }}
         REGION: ${{ vars.REGION }}
         BUCKET_NAME: ${{ vars.BUCKET_NAME }}
+        FUNCTION_ID: ${{ vars.FUNCTION_ID }}
