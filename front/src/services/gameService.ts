@@ -37,6 +37,18 @@ export function getTodayGameSession(gameHistory: GameParticipation[]) {
   return gameHistory.filter((gameSession: GameParticipation) => gameSession.date === date)?.[0] ?? null;
 }
 
+const copyToClipboard = (str: string) => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
+
 export function share(gameSession: GameParticipation) {
   const title: string = `#Ucicle 🚴 - #${gameSession.date}`;
   const cubes: string = gameSession.guesses.reduce(
@@ -52,6 +64,6 @@ export function share(gameSession: GameParticipation) {
 
   const content: string = `${title}\n${result}\n${url}`;
 
-  // eslint-disable-next-line compat/compat
-  navigator.clipboard.writeText(content);
+  if (navigator.clipboard?.writeText) navigator.clipboard?.writeText(content);
+  else copyToClipboard(content);
 }
